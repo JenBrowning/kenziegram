@@ -35,8 +35,8 @@ app.get('/', (request, response) => {
 
             <button type="submit" value="Submit">Submit</button>
         </fieldset>${pictureDisplayer(imgNames)}`);
-        </form>
-    <img src="uploads/Applejack.jpg"/>);
+        
+    <img src="uploads/smileyface.jpg"/>;
     })
 })
 
@@ -45,7 +45,7 @@ app.post('/uploads', upload.single('mfile'), function (request, respond, next) {
     uploadedFiles.push(request.file.filename);
     response.end(`<h1>Congratulations</h1>
     <a href="/">Click here to go back!</a>
-    <img src="uploads/${request.file.lfilename}">`);
+    <img src="uploads/${request.file.filename}">`);
 })
 
 app.listen(port, () => console.log("Server running on" + port));
